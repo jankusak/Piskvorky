@@ -101,6 +101,11 @@ public class Main {
                         continue;
                     }
 
+////                    tohle je cunarna, ale zatim me nenapadlo, jak ten algoritmus opravit nebo vymyslet lepsi
+                    if (playField[0][0].equals(playField[1][0]) && playField[1][0].equals(playField[2][0])) {
+                        System.out.println("Gamer " + currentHrac.name() + " win");
+                        return true;
+                    }
 //                    horizontalni vyhra
                     if (playField[row][column].equals(playField[row][column - 1]) && playField[row][column].equals(playField[row][column + 1])) {
                         System.out.println("Gamer " + currentHrac.name() +" win");
@@ -108,7 +113,7 @@ public class Main {
 
                     }
 //                  vertikalni vyhra
-                    if (playField[row][column].equals(playField[row - 1][column]) && playField[row][column].equals(playField[row + 1][column])) {
+                    if (playField[row][column].equals(playField[row + 1][column]) && playField[row][column].equals(playField[row + 1][column])) {
                         System.out.println("Gamer " + currentHrac.name() +" win");
                         return true;
 
